@@ -2,7 +2,9 @@ name: Wispbyte 自动重启
 
 on:
   schedule:
-    - cron: '20 3 * * *'
+    # 每天 UTC 3:20（北京时间 11:20）
+    #- cron: '20 3 * * *'
+    - cron: '0 23 */3 * *' # 每隔3天 12点(UTC 2点) 运行
   workflow_dispatch:
     inputs:
       accounts:
